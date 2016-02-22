@@ -52,8 +52,12 @@
     <Compile Include="Authentification.Designer.cs">
       <DependentUpon>Authentification.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnexionDataSource.cs" />
+    <Compile Include="Constantes.cs" />
+    <Compile Include="MapperDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy.cs" />
     <EmbeddedResource Include="Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +79,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\" />
+    <Folder Include="Data\" />
+    <Folder Include="Utilitaires\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
