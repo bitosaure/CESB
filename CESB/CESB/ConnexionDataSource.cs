@@ -53,7 +53,7 @@ namespace CESB
                     //adapt.SelectCommand.Parameters.Add("?code", dr["CODEMAG"]);
                     //MySqlDataReader read = r.ExecuteReader();
                     //Magasin m = new Magasin((string)dr[0], (string)dr[1], (string)dr[2], Convert.ToInt64(dr[3]), Convert.ToInt64(dr[4]));
-                    Personne pers = new Personne(Convert.ToInt16(dr[0]), (string)dr[1], (string)dr[2], (string)dr[3], (string)dr[4]);
+                    Personne pers = new Personne(Convert.ToInt16(dr[0]), (string)dr[2], (string)dr[3], (string)dr[4], (string)dr[6]);
                     Proxy.PersonneConnecte = pers;
                     
                 }
