@@ -20,5 +20,13 @@ namespace CESB
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(""+ConnexionDataSource.SeConnecter());
+            //ConnexionDataSource.SeConnecter();
+            ConnexionDataSource.connexionUtilisateur(textBox1.Text, textBox2.Text);
+            label1.Text = Proxy.PersonneConnecte.Nom + " " + Proxy.PersonneConnecte.Prenom;
+        }
     }
 }

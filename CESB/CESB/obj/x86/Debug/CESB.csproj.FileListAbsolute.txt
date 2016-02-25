@@ -5,3 +5,4 @@ C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.Properties
 C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.csproj.GenerateResource.Cache
 C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.exe
 C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.pdb
+C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.csprojResolveAssemblyReference.cache
