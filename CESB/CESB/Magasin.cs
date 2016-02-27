@@ -51,5 +51,9 @@ namespace CESB
             this.SoldeCompte = solde;
             
         }
+        public override string ToString()
+        {
+            return this.CodeMag + " - " + this.nom;
+        }
     }
 }

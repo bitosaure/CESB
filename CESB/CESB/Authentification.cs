@@ -14,6 +14,7 @@ namespace CESB
         public Authentification()
         {
             InitializeComponent();
+            ConnexionDataSource.SeConnecter();
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -23,10 +24,29 @@ namespace CESB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(""+ConnexionDataSource.SeConnecter());
-            //ConnexionDataSource.SeConnecter();
-            ConnexionDataSource.connexionUtilisateur(textBox1.Text, textBox2.Text);
-            label1.Text = Proxy.PersonneConnecte.Nom + " " + Proxy.PersonneConnecte.Prenom;
+            
+            try
+            {
+                ConnexionDataSource.connexionUtilisateur(tbId.Text, tbMdp.Text);
+                if (Proxy.PersonneConnecte.CodeType.Equals(Constantes.codeAdm))
+                {
+                    AdmAccueil nextForm = new AdmAccueil();
+                    this.Hide();
+                    nextForm.ShowDialog();
+                }
+                else
+                {
+                }
+            }
+            catch(ConnectionException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+                
+            
         }
+
+        
     }
 }

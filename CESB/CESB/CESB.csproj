@@ -47,12 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdmAccueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmAccueil.Designer.cs">
+      <DependentUpon>AdmAccueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmCreationUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmCreationUtilisateur.Designer.cs">
+      <DependentUpon>AdmCreationUtilisateur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Authentification.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Authentification.Designer.cs">
       <DependentUpon>Authentification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exception\ConnectionException.cs" />
     <Compile Include="ConnexionDataSource.cs" />
     <Compile Include="Constantes.cs" />
     <Compile Include="Magasin.cs" />
@@ -61,6 +74,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy.cs" />
+    <Compile Include="UtilisateurExistantException.cs" />
+    <Compile Include="Utilitaire.cs" />
+    <EmbeddedResource Include="AdmAccueil.resx">
+      <DependentUpon>AdmAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmCreationUtilisateur.resx">
+      <DependentUpon>AdmCreationUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
     </EmbeddedResource>

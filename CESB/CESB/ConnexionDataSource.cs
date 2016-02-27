@@ -34,36 +34,108 @@ namespace CESB
         */
         public static void connexionUtilisateur(string login, string mdp)
         {
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
             MySqlCommand requete = new MySqlCommand("select * from personne where login=?login and mdp=?mdp");
             requete.Connection = connection;
             requete.Parameters.AddWithValue("?login", login);
             requete.Parameters.AddWithValue("?mdp", mdp);
-            //adapter.SelectCommand.Parameters.Add("?login", login);
-            //adapter.SelectCommand.Parameters.Add("?mdp", mdp);
             MySqlDataReader dr =  requete.ExecuteReader();
             if (dr.HasRows)
             {
                 while (dr.Read())
                 {
                     MySqlDataAdapter adapt = new MySqlDataAdapter();
-                    //MySqlCommand r = new MySqlCommand("select * from magasin where codemag=?code");
-                    //r.Connection = connection;
-                    //r.Parameters.AddWithValue("?code", dr["CODEMAG"]);
-                    //adapt.SelectCommand.Parameters.Add("?code", dr["CODEMAG"]);
-                    //MySqlDataReader read = r.ExecuteReader();
-                    //Magasin m = new Magasin((string)dr[0], (string)dr[1], (string)dr[2], Convert.ToInt64(dr[3]), Convert.ToInt64(dr[4]));
                     Personne pers = new Personne(Convert.ToInt16(dr[0]), (string)dr[2], (string)dr[3], (string)dr[4], (string)dr[6]);
                     Proxy.PersonneConnecte = pers;
                     
                 }
+                dr.Close();
+                
             }
             else
             {
-                
+                dr.Close();
+                throw new ConnectionException("Utilisateur ou mot de passe incorrect");
             }
             
 
+        }
+        public static void GetMagasinPersonne(Personne pers)
+        {
+            MySqlCommand requete = new MySqlCommand("select m.codemag,m.nom, m.adresse, m.numcompte,m.soldecompte from magasin m,"+
+                "personne p where m.codemag=p.codemag and p.matricule=?mat group by m.codemag");
+            requete.Parameters.AddWithValue("?mat", pers.Matricule);
+            MySqlDataReader reader = requete.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Magasin m = new Magasin((string)reader[0], (string)reader[1], (string)reader[2], Convert.ToInt64(reader[3]), Convert.ToInt64(reader[4]));
+                    Proxy.PersonneConnecte.Mag = m;
+                }
+                reader.Close();
+            }
+            
+        }
+        public static List<string> GetTypesUtilisateurs()
+        {
+            List<string> listeTypes = new List<string>();
+            MySqlCommand com = new MySqlCommand("select codetype from type");
+            com.Connection = connection;
+            MySqlDataReader dr = com.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    listeTypes.Add((string)dr[0]);
+                }
+            }
+            dr.Close();
+            return listeTypes;
+        }
+
+        public static List<Magasin> GetMagasins()
+        {
+            List<Magasin> listeMag = new List<Magasin>();
+            MySqlCommand com = new MySqlCommand("select * from magasin");
+            com.Connection = connection;
+            MySqlDataReader dr = com.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Magasin m = new Magasin((string)dr[0], (string)dr[1], (string)dr[2], Convert.ToInt64(dr[3]), Convert.ToInt64(dr[4]));
+                    listeMag.Add(m);
+                }
+            }
+            dr.Close();
+            return listeMag;
+        }
+        public static void CreerPersonne(Personne p)
+        {
+            MySqlCommand requete = new MySqlCommand("select * from personne where nom=?nom and prenom=?prenom");
+            requete.Connection = connection;
+            requete.Parameters.AddWithValue("?nom", p.Nom);
+            requete.Parameters.AddWithValue("?prenom", p.Prenom);
+            MySqlDataReader dr = requete.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Close();
+                throw new UtilisateurExistantException("Un utilisateur existe déjà sous cette identité");
+            }
+            else
+            {
+                dr.Close();
+                MySqlCommand req = new MySqlCommand("insert into personne(codemag,codetype,nom,prenom,numtel,login,mdp) values(?codemag,?codeType,?nom,?prenom,?num,?login,?mdp)");
+                req.Connection = connection;
+                req.Parameters.AddWithValue("?codemag", p.Mag.CodeMag);
+                req.Parameters.AddWithValue("?codeType", p.CodeType);
+                req.Parameters.AddWithValue("?nom", p.Nom);
+                req.Parameters.AddWithValue("?prenom", p.Prenom);
+                req.Parameters.AddWithValue("?num", p.Numtel);
+                req.Parameters.AddWithValue("?login", p.Login);
+                req.Parameters.AddWithValue("?mdp", p.MotDePasse);
+                req.ExecuteNonQuery();
+            }
         }
     }
 }

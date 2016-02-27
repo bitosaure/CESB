@@ -7,5 +7,7 @@ namespace CESB
 {
     public static class Constantes
     {
+        public const string codeAdm="ADM";
+        public const string codeMem = "MEM";
     }
 }

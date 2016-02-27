@@ -31,11 +31,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btValider = new System.Windows.Forms.Button();
+            this.tbId = new System.Windows.Forms.TextBox();
+            this.tbMdp = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labMdp = new System.Windows.Forms.Label();
+            this.labId = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -63,55 +66,77 @@
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
-            // button1
+            // btValider
             // 
-            this.button1.Location = new System.Drawing.Point(200, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btValider.Location = new System.Drawing.Point(59, 96);
+            this.btValider.Name = "btValider";
+            this.btValider.Size = new System.Drawing.Size(75, 23);
+            this.btValider.TabIndex = 1;
+            this.btValider.Text = "Valider";
+            this.btValider.UseVisualStyleBackColor = true;
+            this.btValider.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // tbId
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbId.Location = new System.Drawing.Point(94, 19);
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(100, 20);
+            this.tbId.TabIndex = 2;
             // 
-            // textBox2
+            // tbMdp
             // 
-            this.textBox2.Location = new System.Drawing.Point(180, 137);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.tbMdp.Location = new System.Drawing.Point(94, 56);
+            this.tbMdp.Name = "tbMdp";
+            this.tbMdp.PasswordChar = '*';
+            this.tbMdp.Size = new System.Drawing.Size(100, 20);
+            this.tbMdp.TabIndex = 3;
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.groupBox1.Controls.Add(this.labMdp);
+            this.groupBox1.Controls.Add(this.labId);
+            this.groupBox1.Controls.Add(this.tbId);
+            this.groupBox1.Controls.Add(this.tbMdp);
+            this.groupBox1.Controls.Add(this.btValider);
+            this.groupBox1.Location = new System.Drawing.Point(201, 109);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 138);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Authentification";
+            // 
+            // labMdp
+            // 
+            this.labMdp.AutoSize = true;
+            this.labMdp.Location = new System.Drawing.Point(20, 63);
+            this.labMdp.Name = "labMdp";
+            this.labMdp.Size = new System.Drawing.Size(71, 13);
+            this.labMdp.TabIndex = 5;
+            this.labMdp.Text = "Mot de passe";
+            // 
+            // labId
+            // 
+            this.labId.AutoSize = true;
+            this.labId.Location = new System.Drawing.Point(20, 26);
+            this.labId.Name = "labId";
+            this.labId.Size = new System.Drawing.Size(53, 13);
+            this.labId.TabIndex = 4;
+            this.labId.Text = "Identifiant";
             // 
             // Authentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 362);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Authentification";
             this.Text = "Authentification";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,10 +147,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btValider;
+        private System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.TextBox tbMdp;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label labMdp;
+        private System.Windows.Forms.Label labId;
     }
 }
 
