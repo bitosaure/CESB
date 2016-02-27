@@ -7,6 +7,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using System.Data.Common;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 
 
@@ -112,6 +113,8 @@ namespace CESB
         }
         public static void CreerPersonne(Personne p)
         {
+          
+
             MySqlCommand requete = new MySqlCommand("select * from personne where nom=?nom and prenom=?prenom");
             requete.Connection = connection;
             requete.Parameters.AddWithValue("?nom", p.Nom);

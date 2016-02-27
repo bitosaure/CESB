@@ -35,11 +35,8 @@ namespace CESB
         private void btValider_Click(object sender, EventArgs e)
         {
             Personne p = new Personne((Magasin)cbMag.SelectedItem, (string)cbType.SelectedItem , tbNom.Text, tbPrenom.Text,Convert.ToInt32(tbTel.Text), tbLogin.Text, tbMdp.Text);
-            
-            //p.Numtel = Convert.ToInt32(tbTel.Text);
-            MessageBox.Show("" + p.Numtel);
-            MessageBox.Show(tbTel.Text);
-            //ConnexionDataSource.CreerPersonne(p);
+           
+            ConnexionDataSource.CreerPersonne(p);
 
 
         }

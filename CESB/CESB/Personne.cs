@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace CESB
 {
     public class Personne
     {
-        public Personne(Int16 mat, Magasin mag, string code, string nom, string prenom, Int32 numTel,string user)
+        public Personne(Int16 mat, Magasin mag, string code, string nom, string prenom, Int32 numTele,string user)
         {
+            
+
             this.Matricule = mat;
             this.Mag = mag;
             this.CodeType = code;
             this.Nom = nom;
             this.Prenom = prenom;
-            this.Numtel = numtel;
+            this.Numtel = numTele;
             this.Login = user;
         }
         public Personne(Int16 mat, string code, string nom, string prenom, string user):
             this(mat, null, code, nom, prenom,0, user)
         {
+            
         }
         public Personne(Magasin mag, string code, string nom, string prenom,Int32 numTel, string user,string mdp) :
             this(0, mag, code, nom, prenom, numTel, user)
         {
+          
             this.motDePasse = mdp;
         }
         private string motDePasse;
