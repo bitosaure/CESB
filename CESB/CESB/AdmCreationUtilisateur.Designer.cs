@@ -43,24 +43,24 @@
             this.gestionDesComptesDuMagasinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statistiquesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbCreation = new System.Windows.Forms.GroupBox();
+            this.labTel = new System.Windows.Forms.Label();
+            this.tbTel = new System.Windows.Forms.TextBox();
+            this.labErreur = new System.Windows.Forms.Label();
+            this.tbConfMdp = new System.Windows.Forms.TextBox();
+            this.tbMdp = new System.Windows.Forms.TextBox();
+            this.tbLogin = new System.Windows.Forms.TextBox();
+            this.tbPrenom = new System.Windows.Forms.TextBox();
+            this.tbNom = new System.Windows.Forms.TextBox();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.cbMag = new System.Windows.Forms.ComboBox();
+            this.labConf = new System.Windows.Forms.Label();
+            this.labMdp = new System.Windows.Forms.Label();
             this.labMag = new System.Windows.Forms.Label();
             this.labPrenom = new System.Windows.Forms.Label();
             this.labNom = new System.Windows.Forms.Label();
             this.labLogin = new System.Windows.Forms.Label();
             this.labType = new System.Windows.Forms.Label();
-            this.labMdp = new System.Windows.Forms.Label();
-            this.labConf = new System.Windows.Forms.Label();
-            this.cbMag = new System.Windows.Forms.ComboBox();
-            this.cbType = new System.Windows.Forms.ComboBox();
-            this.tbNom = new System.Windows.Forms.TextBox();
-            this.tbPrenom = new System.Windows.Forms.TextBox();
-            this.tbLogin = new System.Windows.Forms.TextBox();
-            this.tbMdp = new System.Windows.Forms.TextBox();
-            this.tbConfMdp = new System.Windows.Forms.TextBox();
             this.btValider = new System.Windows.Forms.Button();
-            this.labErreur = new System.Windows.Forms.Label();
-            this.tbTel = new System.Windows.Forms.TextBox();
-            this.labTel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.gbCreation.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +91,7 @@
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -197,6 +197,101 @@
             this.gbCreation.TabStop = false;
             this.gbCreation.Text = "Créer un nouvel utilisateur";
             // 
+            // labTel
+            // 
+            this.labTel.AutoSize = true;
+            this.labTel.Location = new System.Drawing.Point(18, 192);
+            this.labTel.Name = "labTel";
+            this.labTel.Size = new System.Drawing.Size(58, 13);
+            this.labTel.TabIndex = 19;
+            this.labTel.Text = "Téléphone";
+            // 
+            // tbTel
+            // 
+            this.tbTel.Location = new System.Drawing.Point(209, 189);
+            this.tbTel.Name = "tbTel";
+            this.tbTel.Size = new System.Drawing.Size(100, 20);
+            this.tbTel.TabIndex = 18;
+            // 
+            // labErreur
+            // 
+            this.labErreur.AutoSize = true;
+            this.labErreur.Location = new System.Drawing.Point(337, 287);
+            this.labErreur.Name = "labErreur";
+            this.labErreur.Size = new System.Drawing.Size(0, 13);
+            this.labErreur.TabIndex = 17;
+            // 
+            // tbConfMdp
+            // 
+            this.tbConfMdp.Location = new System.Drawing.Point(209, 284);
+            this.tbConfMdp.Name = "tbConfMdp";
+            this.tbConfMdp.Size = new System.Drawing.Size(100, 20);
+            this.tbConfMdp.TabIndex = 16;
+            this.tbConfMdp.TextChanged += new System.EventHandler(this.tbConfMdp_TextChanged);
+            // 
+            // tbMdp
+            // 
+            this.tbMdp.Location = new System.Drawing.Point(209, 251);
+            this.tbMdp.Name = "tbMdp";
+            this.tbMdp.Size = new System.Drawing.Size(100, 20);
+            this.tbMdp.TabIndex = 15;
+            // 
+            // tbLogin
+            // 
+            this.tbLogin.Location = new System.Drawing.Point(209, 215);
+            this.tbLogin.Name = "tbLogin";
+            this.tbLogin.Size = new System.Drawing.Size(100, 20);
+            this.tbLogin.TabIndex = 14;
+            // 
+            // tbPrenom
+            // 
+            this.tbPrenom.Location = new System.Drawing.Point(209, 163);
+            this.tbPrenom.Name = "tbPrenom";
+            this.tbPrenom.Size = new System.Drawing.Size(100, 20);
+            this.tbPrenom.TabIndex = 13;
+            // 
+            // tbNom
+            // 
+            this.tbNom.Location = new System.Drawing.Point(209, 131);
+            this.tbNom.Name = "tbNom";
+            this.tbNom.Size = new System.Drawing.Size(100, 20);
+            this.tbNom.TabIndex = 12;
+            this.tbNom.TextChanged += new System.EventHandler(this.tbNom_TextChanged);
+            // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(209, 81);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(121, 21);
+            this.cbType.TabIndex = 11;
+            // 
+            // cbMag
+            // 
+            this.cbMag.FormattingEnabled = true;
+            this.cbMag.Location = new System.Drawing.Point(209, 39);
+            this.cbMag.Name = "cbMag";
+            this.cbMag.Size = new System.Drawing.Size(168, 21);
+            this.cbMag.TabIndex = 10;
+            // 
+            // labConf
+            // 
+            this.labConf.AutoSize = true;
+            this.labConf.Location = new System.Drawing.Point(21, 287);
+            this.labConf.Name = "labConf";
+            this.labConf.Size = new System.Drawing.Size(65, 13);
+            this.labConf.TabIndex = 9;
+            this.labConf.Text = "Confirmation";
+            // 
+            // labMdp
+            // 
+            this.labMdp.AutoSize = true;
+            this.labMdp.Location = new System.Drawing.Point(21, 258);
+            this.labMdp.Name = "labMdp";
+            this.labMdp.Size = new System.Drawing.Size(71, 13);
+            this.labMdp.TabIndex = 8;
+            this.labMdp.Text = "Mot de passe";
+            // 
             // labMag
             // 
             this.labMag.AutoSize = true;
@@ -242,76 +337,6 @@
             this.labType.TabIndex = 4;
             this.labType.Text = "Type utilisateur";
             // 
-            // labMdp
-            // 
-            this.labMdp.AutoSize = true;
-            this.labMdp.Location = new System.Drawing.Point(21, 258);
-            this.labMdp.Name = "labMdp";
-            this.labMdp.Size = new System.Drawing.Size(71, 13);
-            this.labMdp.TabIndex = 8;
-            this.labMdp.Text = "Mot de passe";
-            // 
-            // labConf
-            // 
-            this.labConf.AutoSize = true;
-            this.labConf.Location = new System.Drawing.Point(21, 287);
-            this.labConf.Name = "labConf";
-            this.labConf.Size = new System.Drawing.Size(65, 13);
-            this.labConf.TabIndex = 9;
-            this.labConf.Text = "Confirmation";
-            // 
-            // cbMag
-            // 
-            this.cbMag.FormattingEnabled = true;
-            this.cbMag.Location = new System.Drawing.Point(209, 39);
-            this.cbMag.Name = "cbMag";
-            this.cbMag.Size = new System.Drawing.Size(168, 21);
-            this.cbMag.TabIndex = 10;
-            // 
-            // cbType
-            // 
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(209, 81);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(121, 21);
-            this.cbType.TabIndex = 11;
-            // 
-            // tbNom
-            // 
-            this.tbNom.Location = new System.Drawing.Point(209, 131);
-            this.tbNom.Name = "tbNom";
-            this.tbNom.Size = new System.Drawing.Size(100, 20);
-            this.tbNom.TabIndex = 12;
-            // 
-            // tbPrenom
-            // 
-            this.tbPrenom.Location = new System.Drawing.Point(209, 163);
-            this.tbPrenom.Name = "tbPrenom";
-            this.tbPrenom.Size = new System.Drawing.Size(100, 20);
-            this.tbPrenom.TabIndex = 13;
-            // 
-            // tbLogin
-            // 
-            this.tbLogin.Location = new System.Drawing.Point(209, 215);
-            this.tbLogin.Name = "tbLogin";
-            this.tbLogin.Size = new System.Drawing.Size(100, 20);
-            this.tbLogin.TabIndex = 14;
-            // 
-            // tbMdp
-            // 
-            this.tbMdp.Location = new System.Drawing.Point(209, 251);
-            this.tbMdp.Name = "tbMdp";
-            this.tbMdp.Size = new System.Drawing.Size(100, 20);
-            this.tbMdp.TabIndex = 15;
-            // 
-            // tbConfMdp
-            // 
-            this.tbConfMdp.Location = new System.Drawing.Point(209, 284);
-            this.tbConfMdp.Name = "tbConfMdp";
-            this.tbConfMdp.Size = new System.Drawing.Size(100, 20);
-            this.tbConfMdp.TabIndex = 16;
-            this.tbConfMdp.TextChanged += new System.EventHandler(this.tbConfMdp_TextChanged);
-            // 
             // btValider
             // 
             this.btValider.Location = new System.Drawing.Point(649, 333);
@@ -321,30 +346,6 @@
             this.btValider.Text = "Valider";
             this.btValider.UseVisualStyleBackColor = true;
             this.btValider.Click += new System.EventHandler(this.btValider_Click);
-            // 
-            // labErreur
-            // 
-            this.labErreur.AutoSize = true;
-            this.labErreur.Location = new System.Drawing.Point(337, 287);
-            this.labErreur.Name = "labErreur";
-            this.labErreur.Size = new System.Drawing.Size(0, 13);
-            this.labErreur.TabIndex = 17;
-            // 
-            // tbTel
-            // 
-            this.tbTel.Location = new System.Drawing.Point(209, 189);
-            this.tbTel.Name = "tbTel";
-            this.tbTel.Size = new System.Drawing.Size(100, 20);
-            this.tbTel.TabIndex = 18;
-            // 
-            // labTel
-            // 
-            this.labTel.AutoSize = true;
-            this.labTel.Location = new System.Drawing.Point(18, 192);
-            this.labTel.Name = "labTel";
-            this.labTel.Size = new System.Drawing.Size(58, 13);
-            this.labTel.TabIndex = 19;
-            this.labTel.Text = "Téléphone";
             // 
             // AdmCreationUtilisateur
             // 

@@ -40,5 +40,24 @@ namespace CESB
 
 
         }
+
+        public void testerChamps(TextBox tb)
+        {
+            if (tb.Text != "")
+            {
+                int alo;
+                bool rep = int.TryParse(tb.Text, out alo);
+                if (rep == true)
+                {
+                    MessageBox.Show("Lettres uniquement");
+                }
+
+            }
+        }
+
+        private void tbNom_TextChanged(object sender, EventArgs e)
+        {
+            testerChamps(this.tbNom);
+        }
     }
 }
