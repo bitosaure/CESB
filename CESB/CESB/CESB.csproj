@@ -59,6 +59,12 @@
     <Compile Include="AdmCreationUtilisateur.Designer.cs">
       <DependentUpon>AdmCreationUtilisateur.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdmSuppressionUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmSuppressionUtilisateur.Designer.cs">
+      <DependentUpon>AdmSuppressionUtilisateur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Authentification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdmCreationUtilisateur.resx">
       <DependentUpon>AdmCreationUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmSuppressionUtilisateur.resx">
+      <DependentUpon>AdmSuppressionUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>

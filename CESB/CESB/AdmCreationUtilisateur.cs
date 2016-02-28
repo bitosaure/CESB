@@ -46,5 +46,12 @@ namespace CESB
         {
             Utilitaire.testerChamps(this.tbNom);
         }
+
+        private void suppressionDesUtilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdmSuppressionUtilisateur sup = new AdmSuppressionUtilisateur();
+            this.Hide();
+            sup.ShowDialog();
+        }
     }
 }

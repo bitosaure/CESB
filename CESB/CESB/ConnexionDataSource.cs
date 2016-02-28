@@ -71,11 +71,29 @@ namespace CESB
                 while (reader.Read())
                 {
                     Magasin m = new Magasin((string)reader[0], (string)reader[1], (string)reader[2], Convert.ToInt64(reader[3]), Convert.ToInt64(reader[4]));
-                    Proxy.PersonneConnecte.Mag = m;
+                    pers.Mag = m;
                 }
                 reader.Close();
             }
             
+        }
+        public static List<Personne> GetListePersonnes()
+        {
+            List<Personne> listePersonnes = new List<Personne>();
+            MySqlCommand com = new MySqlCommand("select * from personne");
+            com.Connection = connection;
+            MySqlDataReader dr = com.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Personne p = new Personne(Convert.ToInt16(dr[0]), (string)dr[2], (string)dr[3], (string)dr[4], (string)dr[6]);
+                    listePersonnes.Add(p);
+                }
+            }
+            //listePersonnes.Remove(Proxy.PersonneConnecte);
+            dr.Close();
+            return listePersonnes;
         }
         public static List<string> GetTypesUtilisateurs()
         {
@@ -137,6 +155,28 @@ namespace CESB
                 req.Parameters.AddWithValue("?num", p.Numtel);
                 req.Parameters.AddWithValue("?login", p.Login);
                 req.Parameters.AddWithValue("?mdp", p.MotDePasse);
+                req.ExecuteNonQuery();
+            }
+        }
+
+        public static void SupprimerPersonne(Personne p)
+        {
+            MySqlCommand requete = new MySqlCommand("select * from personne where nom=?nom and prenom=?prenom");
+            requete.Connection = connection;
+            requete.Parameters.AddWithValue("?nom", p.Nom);
+            requete.Parameters.AddWithValue("?prenom", p.Prenom);
+            MySqlDataReader dr = requete.ExecuteReader();
+            if (!dr.HasRows)
+            {
+                dr.Close();
+                throw new UtilisateurExistantException("La personne que vous souhaitez supprimer n'existe pas");
+            }
+            else
+            {
+                dr.Close();
+                MySqlCommand req = new MySqlCommand("delete from personne where matricule=?mat");
+                req.Connection = connection;
+                req.Parameters.AddWithValue("?mat", p.Matricule);
                 req.ExecuteNonQuery();
             }
         }

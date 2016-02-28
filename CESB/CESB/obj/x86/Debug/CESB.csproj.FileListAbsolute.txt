@@ -8,3 +8,4 @@ C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.pdb
 C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.csprojResolveAssemblyReference.cache
 C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.AdmAccueil.resources
 C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.AdmCreationUtilisateur.resources
+C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.AdmSuppressionUtilisateur.resources

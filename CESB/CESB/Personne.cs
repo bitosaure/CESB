@@ -87,5 +87,9 @@ namespace CESB
             get { return codeType; }
             set { codeType = value; }
         }
+        public override string ToString()
+        {
+            return this.Prenom + " - " + this.nom + " - " + this.Login + " - " + this.CodeType;
+        }
     }
 }

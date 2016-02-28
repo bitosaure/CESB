@@ -118,6 +118,7 @@
             this.suppressionDesUtilisateursToolStripMenuItem.Name = "suppressionDesUtilisateursToolStripMenuItem";
             this.suppressionDesUtilisateursToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.suppressionDesUtilisateursToolStripMenuItem.Text = "Suppression des utilisateurs";
+            this.suppressionDesUtilisateursToolStripMenuItem.Click += new System.EventHandler(this.suppressionDesUtilisateursToolStripMenuItem_Click);
             // 
             // gestionDesProduitsToolStripMenuItem
             // 
