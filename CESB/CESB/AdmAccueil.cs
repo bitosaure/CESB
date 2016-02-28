@@ -37,5 +37,12 @@ namespace CESB
             sup.ShowDialog();
             
         }
+
+        private void créationDeProduitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdmAjouterProduit aj = new AdmAjouterProduit();
+            this.Hide();
+            aj.ShowDialog();
+        }
     }
 }

@@ -158,7 +158,29 @@ namespace CESB
                 req.ExecuteNonQuery();
             }
         }
+        public static List<FamilleProduit> GetFamilleProduit()
+        {
+            List<FamilleProduit> listFam = new List<FamilleProduit>();
+            MySqlCommand com = new MySqlCommand("select * from familleproduit");
 
+
+            com.Connection = connection;
+            MySqlDataReader dr = com.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+
+                    FamilleProduit m = new FamilleProduit((string)dr[0], (string)dr[1]);
+                    listFam.Add(m);
+
+
+                }
+            }
+
+            dr.Close();
+            return listFam;
+        }
         public static void SupprimerPersonne(Personne p)
         {
             MySqlCommand requete = new MySqlCommand("select * from personne where nom=?nom and prenom=?prenom");
