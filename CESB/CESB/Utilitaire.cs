@@ -1,12 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace CESB
 {
     public static class Utilitaire
     {
+        public static void testerChamps(TextBox tb)
+        {
+            if (tb.Text != "")
+            {
+                int alo;
+                bool rep = int.TryParse(tb.Text, out alo);
+                if (rep == true)
+                {
+                    MessageBox.Show("Lettres uniquement");
+                    tb.Text = "";
+                }
+
+            }
+
+        }
         public static string GetDateDuJour()
         {
             DateTime dt = DateTime.Now;
