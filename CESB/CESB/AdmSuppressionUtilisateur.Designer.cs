@@ -76,7 +76,7 @@
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -172,6 +172,7 @@
             this.listUtil.Name = "listUtil";
             this.listUtil.Size = new System.Drawing.Size(217, 134);
             this.listUtil.TabIndex = 5;
+            this.listUtil.SelectedIndexChanged += new System.EventHandler(this.listUtil_SelectedIndexChanged);
             // 
             // btValider
             // 

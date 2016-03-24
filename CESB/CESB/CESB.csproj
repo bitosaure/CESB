@@ -53,6 +53,12 @@
     <Compile Include="AdmAccueil.Designer.cs">
       <DependentUpon>AdmAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdmAcheterSurCentraleAchat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmAcheterSurCentraleAchat.Designer.cs">
+      <DependentUpon>AdmAcheterSurCentraleAchat.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdmAjouterProduit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     </Compile>
     <Compile Include="AdmCreationUtilisateur.Designer.cs">
       <DependentUpon>AdmCreationUtilisateur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmSuppressionProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmSuppressionProduit.Designer.cs">
+      <DependentUpon>AdmSuppressionProduit.cs</DependentUpon>
     </Compile>
     <Compile Include="AdmSuppressionUtilisateur.cs">
       <SubType>Form</SubType>
@@ -77,10 +89,12 @@
     <Compile Include="Authentification.Designer.cs">
       <DependentUpon>Authentification.cs</DependentUpon>
     </Compile>
+    <Compile Include="CentraleAchat.cs" />
     <Compile Include="Exception\ConnectionException.cs" />
     <Compile Include="ConnexionDataSource.cs" />
     <Compile Include="Constantes.cs" />
     <Compile Include="FamilleProduit.cs" />
+    <Compile Include="Ingredient.cs" />
     <Compile Include="Magasin.cs" />
     <Compile Include="MapperDAO.cs" />
     <Compile Include="Personne.cs" />
@@ -90,14 +104,21 @@
     <Compile Include="Proxy.cs" />
     <Compile Include="UtilisateurExistantException.cs" />
     <Compile Include="Utilitaire.cs" />
+    <Compile Include="Vente.cs" />
     <EmbeddedResource Include="AdmAccueil.resx">
       <DependentUpon>AdmAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmAcheterSurCentraleAchat.resx">
+      <DependentUpon>AdmAcheterSurCentraleAchat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdmAjouterProduit.resx">
       <DependentUpon>AdmAjouterProduit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdmCreationUtilisateur.resx">
       <DependentUpon>AdmCreationUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmSuppressionProduit.resx">
+      <DependentUpon>AdmSuppressionProduit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdmSuppressionUtilisateur.resx">
       <DependentUpon>AdmSuppressionUtilisateur.cs</DependentUpon>

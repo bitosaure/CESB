@@ -44,5 +44,12 @@ namespace CESB
             this.Hide();
             aj.ShowDialog();
         }
+
+        private void suppressionDeProduitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdmSuppressionProduit asP = new AdmSuppressionProduit();
+            this.Hide();
+            asP.ShowDialog();
+        }
     }
 }

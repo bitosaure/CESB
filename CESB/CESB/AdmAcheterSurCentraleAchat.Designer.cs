@@ -1,6 +1,6 @@
 ﻿namespace CESB
 {
-    partial class AdmAjouterProduit
+    partial class AdmAcheterSurCentraleAchat
     {
         /// <summary>
         /// Required designer variable.
@@ -42,18 +42,23 @@
             this.suppressionDeProduitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesComptesDuMagasinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statistiquesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.lbCode = new System.Windows.Forms.Label();
-            this.tbCode = new System.Windows.Forms.TextBox();
-            this.lbPrénom = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbFamille = new System.Windows.Forms.Label();
-            this.tbNom = new System.Windows.Forms.TextBox();
-            this.tbPrix = new System.Windows.Forms.TextBox();
-            this.cbFamille = new System.Windows.Forms.ComboBox();
-            this.btValider = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ttbNum = new System.Windows.Forms.TextBox();
+            this.tbNom = new System.Windows.Forms.TextBox();
+            this.btRechercher = new System.Windows.Forms.Button();
+            this.listIng = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbQuantite = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.listPanier = new System.Windows.Forms.ListBox();
+            this.btPanier = new System.Windows.Forms.Button();
+            this.btValiderAchat = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -67,8 +72,8 @@
             this.statistiquesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(766, 24);
-            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Size = new System.Drawing.Size(792, 24);
+            this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fichierToolStripMenuItem
@@ -161,124 +166,163 @@
             this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.statistiquesToolStripMenuItem.Text = "Statistiques";
             // 
-            // lbTitle
+            // label1
             // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(274, 70);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(129, 18);
-            this.lbTitle.TabIndex = 4;
-            this.lbTitle.Text = "Création produit";
-            this.lbTitle.Click += new System.EventHandler(this.label1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(192, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Acheter sur centrale d\'achat";
             // 
-            // lbCode
+            // groupBox1
             // 
-            this.lbCode.AutoSize = true;
-            this.lbCode.Location = new System.Drawing.Point(256, 170);
-            this.lbCode.Name = "lbCode";
-            this.lbCode.Size = new System.Drawing.Size(35, 13);
-            this.lbCode.TabIndex = 5;
-            this.lbCode.Text = "Code:";
+            this.groupBox1.Controls.Add(this.btRechercher);
+            this.groupBox1.Controls.Add(this.tbNom);
+            this.groupBox1.Controls.Add(this.ttbNum);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 107);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(607, 96);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Rechercher un ingredient";
             // 
-            // tbCode
+            // label2
             // 
-            this.tbCode.Location = new System.Drawing.Point(354, 162);
-            this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(116, 20);
-            this.tbCode.TabIndex = 6;
-            // 
-            // lbPrénom
-            // 
-            this.lbPrénom.AutoSize = true;
-            this.lbPrénom.Location = new System.Drawing.Point(256, 205);
-            this.lbPrénom.Name = "lbPrénom";
-            this.lbPrénom.Size = new System.Drawing.Size(29, 13);
-            this.lbPrénom.TabIndex = 7;
-            this.lbPrénom.Text = "Nom";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(38, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "par numéro:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(256, 243);
+            this.label3.Location = new System.Drawing.Point(274, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Prix";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Par nom";
             // 
-            // lbFamille
+            // ttbNum
             // 
-            this.lbFamille.AutoSize = true;
-            this.lbFamille.Location = new System.Drawing.Point(256, 283);
-            this.lbFamille.Name = "lbFamille";
-            this.lbFamille.Size = new System.Drawing.Size(39, 13);
-            this.lbFamille.TabIndex = 9;
-            this.lbFamille.Text = "Famille";
+            this.ttbNum.Location = new System.Drawing.Point(117, 44);
+            this.ttbNum.Name = "ttbNum";
+            this.ttbNum.Size = new System.Drawing.Size(100, 20);
+            this.ttbNum.TabIndex = 3;
             // 
             // tbNom
             // 
-            this.tbNom.Location = new System.Drawing.Point(354, 205);
+            this.tbNom.Location = new System.Drawing.Point(340, 44);
             this.tbNom.Name = "tbNom";
-            this.tbNom.Size = new System.Drawing.Size(116, 20);
-            this.tbNom.TabIndex = 10;
+            this.tbNom.Size = new System.Drawing.Size(100, 20);
+            this.tbNom.TabIndex = 4;
             // 
-            // tbPrix
+            // btRechercher
             // 
-            this.tbPrix.Location = new System.Drawing.Point(354, 243);
-            this.tbPrix.Name = "tbPrix";
-            this.tbPrix.Size = new System.Drawing.Size(116, 20);
-            this.tbPrix.TabIndex = 11;
+            this.btRechercher.Location = new System.Drawing.Point(497, 44);
+            this.btRechercher.Name = "btRechercher";
+            this.btRechercher.Size = new System.Drawing.Size(75, 23);
+            this.btRechercher.TabIndex = 5;
+            this.btRechercher.Text = "Rechercher";
+            this.btRechercher.UseVisualStyleBackColor = true;
+            this.btRechercher.Click += new System.EventHandler(this.btRechercher_Click);
             // 
-            // cbFamille
+            // listIng
             // 
-            this.cbFamille.FormattingEnabled = true;
-            this.cbFamille.Location = new System.Drawing.Point(354, 280);
-            this.cbFamille.Name = "cbFamille";
-            this.cbFamille.Size = new System.Drawing.Size(116, 21);
-            this.cbFamille.TabIndex = 12;
+            this.listIng.FormattingEnabled = true;
+            this.listIng.Location = new System.Drawing.Point(51, 271);
+            this.listIng.Name = "listIng";
+            this.listIng.Size = new System.Drawing.Size(178, 134);
+            this.listIng.TabIndex = 7;
             // 
-            // btValider
+            // label4
             // 
-            this.btValider.Location = new System.Drawing.Point(407, 337);
-            this.btValider.Name = "btValider";
-            this.btValider.Size = new System.Drawing.Size(75, 23);
-            this.btValider.TabIndex = 13;
-            this.btValider.Text = "Valider";
-            this.btValider.UseVisualStyleBackColor = true;
-            this.btValider.Click += new System.EventHandler(this.btValider_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 252);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Resultat de la recherche";
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(530, 165);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "code sous 6 chiffres";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(297, 288);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Quantité ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // AdmAjouterProduit
+            // tbQuantite
+            // 
+            this.tbQuantite.Location = new System.Drawing.Point(276, 321);
+            this.tbQuantite.Name = "tbQuantite";
+            this.tbQuantite.Size = new System.Drawing.Size(100, 20);
+            this.tbQuantite.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(509, 234);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Mon panier";
+            // 
+            // listPanier
+            // 
+            this.listPanier.FormattingEnabled = true;
+            this.listPanier.Location = new System.Drawing.Point(480, 271);
+            this.listPanier.Name = "listPanier";
+            this.listPanier.Size = new System.Drawing.Size(178, 134);
+            this.listPanier.TabIndex = 12;
+            // 
+            // btPanier
+            // 
+            this.btPanier.Location = new System.Drawing.Point(289, 367);
+            this.btPanier.Name = "btPanier";
+            this.btPanier.Size = new System.Drawing.Size(96, 38);
+            this.btPanier.TabIndex = 13;
+            this.btPanier.Text = "Ajouter au panier";
+            this.btPanier.UseVisualStyleBackColor = true;
+            // 
+            // btValiderAchat
+            // 
+            this.btValiderAchat.Location = new System.Drawing.Point(687, 338);
+            this.btValiderAchat.Name = "btValiderAchat";
+            this.btValiderAchat.Size = new System.Drawing.Size(75, 52);
+            this.btValiderAchat.TabIndex = 14;
+            this.btValiderAchat.Text = "Valider les achats";
+            this.btValiderAchat.UseVisualStyleBackColor = true;
+            // 
+            // AdmAcheterSurCentraleAchat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 458);
+            this.ClientSize = new System.Drawing.Size(792, 449);
+            this.Controls.Add(this.btValiderAchat);
+            this.Controls.Add(this.btPanier);
+            this.Controls.Add(this.listPanier);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbQuantite);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.listIng);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btValider);
-            this.Controls.Add(this.cbFamille);
-            this.Controls.Add(this.tbPrix);
-            this.Controls.Add(this.tbNom);
-            this.Controls.Add(this.lbFamille);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lbPrénom);
-            this.Controls.Add(this.tbCode);
-            this.Controls.Add(this.lbCode);
-            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "AdmAjouterProduit";
-            this.Text = "AjouterProduit";
-            this.Load += new System.EventHandler(this.AdmAjouterProduit_Load);
+            this.Name = "AdmAcheterSurCentraleAchat";
+            this.Text = "AdmAcheterSurCentraleAchat";
+            this.Load += new System.EventHandler(this.AdmAcheterSurCentraleAchat_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,16 +344,20 @@
         private System.Windows.Forms.ToolStripMenuItem suppressionDeProduitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesComptesDuMagasinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statistiquesToolStripMenuItem;
-        private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.Label lbCode;
-        private System.Windows.Forms.TextBox tbCode;
-        private System.Windows.Forms.Label lbPrénom;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbFamille;
-        private System.Windows.Forms.TextBox tbNom;
-        private System.Windows.Forms.TextBox tbPrix;
-        private System.Windows.Forms.ComboBox cbFamille;
-        private System.Windows.Forms.Button btValider;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox tbNom;
+        private System.Windows.Forms.TextBox ttbNum;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btRechercher;
+        private System.Windows.Forms.ListBox listIng;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbQuantite;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox listPanier;
+        private System.Windows.Forms.Button btPanier;
+        private System.Windows.Forms.Button btValiderAchat;
     }
 }

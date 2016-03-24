@@ -36,6 +36,9 @@ namespace CESB
             set { adresse = value; }
         }
         private string codeMag;
+        private List<CentraleAchat> centrale;
+        private List<Ingredient> listeIngredients;
+       
 
         public string CodeMag
         {

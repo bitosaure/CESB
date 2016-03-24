@@ -10,3 +10,4 @@ C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.AdmAccueil
 C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.AdmCreationUtilisateur.resources
 C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.AdmSuppressionUtilisateur.resources
 C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.AdmAjouterProduit.resources
+C:\Users\darty les halles\Documents\CESB\CESB\CESB\obj\x86\Debug\CESB.AdmSuppressionProduit.resources

@@ -26,9 +26,21 @@ namespace CESB
             this.code = codeF;
             this.libelle = libelleF;
         }
+        public FamilleProduit(String codeF)
+        {
+            this.code = codeF;
+            this.libelle = "";
+        }
         public override string ToString()
         {
-            return "code: " + this.code + "libelle " +this.libelle;
+            if (this.libelle == "")
+            {
+                return "code: " + this.code + "libelle " + this.libelle;
+            }
+            else
+            {
+                return "code: " + this.code;
+            }
         }
 
     }

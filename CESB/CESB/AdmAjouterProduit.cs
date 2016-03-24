@@ -39,5 +39,12 @@ namespace CESB
         {
 
         }
+
+        private void btValider_Click(object sender, EventArgs e)
+        {
+            FamilleProduit famille =(FamilleProduit) cbFamille.SelectedItem;
+            Produit p = new Produit(tbCode.Text, tbNom.Text, Convert.ToDouble(tbPrix.Text), famille);
+            ConnexionDataSource.CreerProduit(p);
+        }
     }
 }

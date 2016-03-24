@@ -95,6 +95,24 @@ namespace CESB
             dr.Close();
             return listePersonnes;
         }
+        public static List<Produit> GetListeProduit()
+        {
+            List<Produit> listeProduit = new List<Produit>();
+            MySqlCommand com = new MySqlCommand("select * from produit");
+            com.Connection = connection;
+            MySqlDataReader dr = com.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Produit p = new Produit((string)(dr[0]), (string)dr[2], Convert.ToDouble(dr[3]), new FamilleProduit((string)dr[1]));
+                    listeProduit.Add(p);
+                }
+            }
+            //listePersonnes.Remove(Proxy.PersonneConnecte);
+            dr.Close();
+            return listeProduit;
+        }
         public static List<string> GetTypesUtilisateurs()
         {
             List<string> listeTypes = new List<string>();
@@ -111,7 +129,18 @@ namespace CESB
             dr.Close();
             return listeTypes;
         }
+        public static CentraleAchat getCentrale(Magasin m)
+        {
+            CentraleAchat centrale = null;
+            MySqlCommand com = new MySqlCommand("select codetype from centraleachat c, ingredient i");
 
+            return centrale;
+        }
+        public static void acheterIngredients(Dictionary<Ingredient, Int16> list)
+        {
+            
+        }
+        
         public static List<Magasin> GetMagasins()
         {
             List<Magasin> listeMag = new List<Magasin>();
@@ -128,6 +157,33 @@ namespace CESB
             }
             dr.Close();
             return listeMag;
+        }
+        public static void CreerProduit(Produit p)
+        {
+
+
+            MySqlCommand requete = new MySqlCommand("select * from produit where codeproduit=?code ");
+            requete.Connection = connection;
+            requete.Parameters.AddWithValue("?code", p.Code);
+            
+            MySqlDataReader dr = requete.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Close();
+                throw new UtilisateurExistantException("Un produit existe déjà sous cette identité");
+            }
+            else
+            {
+                dr.Close();
+                MySqlCommand req = new MySqlCommand("insert into produit(codeproduit,codefamille,nom,prix) values(?codepro,?codefam,?nom,?prix)");
+                req.Connection = connection;
+                req.Parameters.AddWithValue("?codepro", p.Code);
+                req.Parameters.AddWithValue("?codefam", p.Famille.Code);
+                req.Parameters.AddWithValue("?nom", p.Nom);
+                req.Parameters.AddWithValue("?prix", p.Prix);
+
+                req.ExecuteNonQuery();
+            }
         }
         public static void CreerPersonne(Personne p)
         {
@@ -199,6 +255,27 @@ namespace CESB
                 MySqlCommand req = new MySqlCommand("delete from personne where matricule=?mat");
                 req.Connection = connection;
                 req.Parameters.AddWithValue("?mat", p.Matricule);
+                req.ExecuteNonQuery();
+            }
+        }
+        public static void SupprimerProduit(Produit p)
+        {
+            MySqlCommand requete = new MySqlCommand("select * from produit where codeproduit=?code");
+            requete.Connection = connection;
+            requete.Parameters.AddWithValue("?code", p.Code);
+   
+            MySqlDataReader dr = requete.ExecuteReader();
+            if (!dr.HasRows)
+            {
+                dr.Close();
+                throw new UtilisateurExistantException("Le produit que vous souhaitez supprimer n'existe pas");
+            }
+            else
+            {
+                dr.Close();
+                MySqlCommand req = new MySqlCommand("delete from produit where codeproduit=?code");
+                req.Connection = connection;
+                req.Parameters.AddWithValue("?code", p.Code);
                 req.ExecuteNonQuery();
             }
         }

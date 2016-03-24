@@ -141,6 +141,7 @@
             this.suppressionDeProduitToolStripMenuItem.Name = "suppressionDeProduitToolStripMenuItem";
             this.suppressionDeProduitToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.suppressionDeProduitToolStripMenuItem.Text = "Suppression de produit";
+            this.suppressionDeProduitToolStripMenuItem.Click += new System.EventHandler(this.suppressionDeProduitToolStripMenuItem_Click);
             // 
             // gestionDesComptesDuMagasinToolStripMenuItem
             // 
